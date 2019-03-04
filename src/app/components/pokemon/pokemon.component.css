@@ -1,0 +1,36 @@
+.host {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    width: 28%;
+}
+
+.host_green {
+    background-color: green;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.host_blue {
+    background-color: deepskyblue;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.host_red {
+    background-color: red;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: block;
+}

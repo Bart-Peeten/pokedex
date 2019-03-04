@@ -1,0 +1,10 @@
+<div class="host" [style.background-color] = "pokemon.type == 'Water' ? 'blue': 'green'">
+<!--<div class="host">-->
+    <h2>
+        {{ pokemon.name }}
+    </h2>
+    <h3>
+        {{pokemon.type}}
+    </h3>
+    <img [src]="pokemon.pictureUrl" alt="picture">
+</div>
