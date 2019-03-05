@@ -3,6 +3,6 @@
 </header>
 <main>
     <app-pokemon *ngFor="let item of pokeList;"
-                    [pokemon] = "item">
+                    [pokemon] = "item" (pokemonSelected)="onPokemonSelected($event)">
     </app-pokemon>
 </main>

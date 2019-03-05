@@ -22,4 +22,9 @@ export class AppComponent {
       new Pokemon('Venusaur', 'Grass', 'assets/venusaur.png'),
       new Pokemon('Wartortle', 'Water', 'assets/wartortle.png')
   ];
+
+  // PokemonSelected event handler
+  onPokemonSelected($event) {
+    console.log($event);
+  }
 }

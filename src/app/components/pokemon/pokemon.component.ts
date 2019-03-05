@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
 import {Pokemon} from '../../models/pokemon.model';
 
 @Component({
@@ -8,10 +8,17 @@ import {Pokemon} from '../../models/pokemon.model';
 })
 export class PokemonComponent implements OnInit {
     @Input() pokemon: Pokemon;
+    // Event emitter waarnaar de app.component kan luisteren
+    @Output() pokemonSelected = new EventEmitter<Pokemon>();
 
     constructor() { }
 
     ngOnInit() {
+    }
+
+    // Afhandelen van click event op pokemon.component
+    onClick() {
+      this.pokemonSelected.emit(this.pokemon);
     }
 
 }

@@ -1,4 +1,4 @@
-<div class="host" [style.background-color] = "pokemon.type == 'Water' ? 'blue': 'green'">
+<div class="host" [style.background-color] = "pokemon.type == 'Water' ? 'blue': 'green'" (click)="onClick()">
 <!--<div class="host">-->
     <h2>
         {{ pokemon.name }}
