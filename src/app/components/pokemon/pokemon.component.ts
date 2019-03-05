@@ -21,4 +21,12 @@ export class PokemonComponent implements OnInit {
       this.pokemonSelected.emit(this.pokemon);
     }
 
+    getColor(type: String) {
+        switch (type) {
+            case 'Fire': return 'red';
+            case 'Water' : return 'blue';
+            case 'Bug': return 'orange';
+            case 'Grass' : return 'green';
+        }
+    }
 }

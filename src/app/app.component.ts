@@ -6,6 +6,7 @@ import {Pokemon} from './models/pokemon.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'pokedex';
   pokeList: Pokemon[] = [
