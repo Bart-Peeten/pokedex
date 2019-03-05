@@ -8,13 +8,14 @@
     width: 28%;
 }
 
-.host_green {
-    background-color: green;
+.host_1 {
     padding: 1rem;
     margin: 0.5rem;
     border-radius: 3px;
     border: 1px solid #ccc;
     display: block;
+    float: left;
+    width: 28%;
 }
 
 .host_blue {
