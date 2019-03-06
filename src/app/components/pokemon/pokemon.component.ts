@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
 import {Pokemon} from '../../models/pokemon.model';
+import {PokemonService} from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -11,7 +12,7 @@ export class PokemonComponent implements OnInit {
     // Event emitter waarnaar de app.component kan luisteren
     @Output() pokemonSelected = new EventEmitter<Pokemon>();
 
-    constructor() { }
+    constructor(private service: PokemonService) { }
 
     ngOnInit() {
     }

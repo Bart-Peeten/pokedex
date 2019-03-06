@@ -5,4 +5,6 @@
     <app-pokemon *ngFor="let item of pokeList;"
                     [pokemon] = "item" (pokemonSelected)="onPokemonSelected($event)">
     </app-pokemon>
+
+    <app-pokemon-form (onsubmit)="createPokemon($event)"></app-pokemon-form>
 </main>

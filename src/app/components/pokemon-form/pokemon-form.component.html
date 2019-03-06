@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="submit(form)" xmlns="http://www.w3.org/1999/html">
+    <input type="text" name="name" placeholder="Name" formControlName="name"><br>
+    <p *ngIf="form.get('name').hasError('minlength')" class="error">Minimum 3 characters.</p>
+    <p *ngIf="form.get('name').hasError('required')" class="error">Required</p>
+
+    <select name="types" formControlName="type">
+        <option></option>
+        <option *ngFor="let item of typeList;"
+                [ngValue] = "item">
+            {{item}}
+        </option>
+    </select><br>
+
+
+    <input type="text" name="url" placeholder="/assests/<name.png>" formControlName="url"><br>
+    <p *ngIf="form.get('url').hasError('minlength')" class="error">Minimum 9 characters</p>
+    <p *ngIf="form.get('url').hasError('required')" class="error">required</p>
+
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>

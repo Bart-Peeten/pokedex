@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Pokemon} from './models/pokemon.model';
+import {PokemonService} from './services/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -7,25 +8,25 @@ import {Pokemon} from './models/pokemon.model';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'pokedex';
-  pokeList: Pokemon[] = [
-      new Pokemon('Blastoise', 'Water', 'assets/blastoise.png'),
-      new Pokemon('Bulbasaur', 'Grass', 'assets/bulbasaur.png'),
-      new Pokemon('Butterfree', 'Bug', 'assets/butterfree.png'),
-      new Pokemon('Caterpie', 'Bug', 'assets/caterpie.png'),
-      new Pokemon('Charizard', 'Fire', 'assets/charizard.png'),
-      new Pokemon('Charmander', 'Fire', 'assets/charmander.png'),
-      new Pokemon('Charmeleon', 'Fire', 'assets/charmeleon.png'),
-      new Pokemon('Ivysaur', 'Grass', 'assets/ivysaur.png'),
-      new Pokemon('Metapod', 'Bug', 'assets/metapod.png'),
-      new Pokemon('Squirtle', 'Water', 'assets/squirtle.png'),
-      new Pokemon('Venusaur', 'Grass', 'assets/venusaur.png'),
-      new Pokemon('Wartortle', 'Water', 'assets/wartortle.png')
-  ];
+  pokeList: Pokemon[];
+  typeList: string[];
+
+  constructor(private service: PokemonService) {}
+
+  ngOnInit(): void {
+      this.pokeList = this.service.getPokeList();
+      /*this.typeList = this.service.getTypeList();*/
+  }
 
   // PokemonSelected event handler
   onPokemonSelected($event) {
     console.log($event);
   }
+
+    createPokemon(event: Pokemon) {
+        console.log(event);
+    }
 }
