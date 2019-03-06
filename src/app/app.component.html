@@ -2,9 +2,18 @@
     <h1>PokeDex</h1>
 </header>
 <main>
-    <app-pokemon *ngFor="let item of pokeList;"
-                    [pokemon] = "item" (pokemonSelected)="onPokemonSelected($event)">
-    </app-pokemon>
+    <div>
+        <label *ngIf="selected">De geselecteerde pokemon is: {{selectedPokemon}}</label>
+    </div>
 
-    <app-pokemon-form (onsubmit)="createPokemon($event)"></app-pokemon-form>
+    <div>
+        <app-pokemon *ngFor="let item of pokeList;"
+                        [pokemon] = "item" (pokemonSelected)="onPokemonSelected($event)">
+        </app-pokemon>
+    </div>
+
+    <div>
+        <app-pokemon-form (onsubmit)="createPokemon($event)"></app-pokemon-form>
+    </div>
+
 </main>

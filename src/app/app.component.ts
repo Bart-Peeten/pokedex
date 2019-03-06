@@ -12,18 +12,20 @@ export class AppComponent implements OnInit {
 
   title = 'pokedex';
   pokeList: Pokemon[];
-  typeList: string[];
+  selectedPokemon: string;
+  selected = false;
 
   constructor(private service: PokemonService) {}
 
   ngOnInit(): void {
       this.pokeList = this.service.getPokeList();
-      /*this.typeList = this.service.getTypeList();*/
   }
 
   // PokemonSelected event handler
-  onPokemonSelected($event) {
-    console.log($event);
+  onPokemonSelected(event: Pokemon) {
+    console.log(event);
+    this.selectedPokemon = event.name;
+    this.selected = true;
   }
 
     createPokemon(event: Pokemon) {

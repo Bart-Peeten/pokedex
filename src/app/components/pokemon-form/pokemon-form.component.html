@@ -10,6 +10,8 @@
             {{item}}
         </option>
     </select><br>
+    <p *ngIf="form.get('type').hasError('required')" class="error">Required</p>
+
 
 
     <input type="text" name="url" placeholder="/assests/<name.png>" formControlName="url"><br>

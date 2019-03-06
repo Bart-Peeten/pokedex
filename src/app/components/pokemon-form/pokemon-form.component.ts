@@ -29,7 +29,7 @@ export class PokemonFormComponent implements OnInit {
       const poke = new Pokemon(
           this.form.value.name,
           this.form.value.type,
-          this.form.value.uri
+          this.form.value.url
       );
       this.form.reset();
       this.onsubmit.emit(poke);
