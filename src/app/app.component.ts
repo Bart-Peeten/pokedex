@@ -28,5 +28,6 @@ export class AppComponent implements OnInit {
 
     createPokemon(event: Pokemon) {
         console.log(event);
+        this.service.addNewPokemon(event);
     }
 }
